@@ -9,9 +9,7 @@ import SwiftUI
 
 struct PanelView: View {
     @EnvironmentObject var lamp: LampModel
-    
-    @State private var brightness: CGFloat = 0
-    
+        
     var body: some View {
         NavigationView {
             List {
@@ -27,25 +25,6 @@ struct PanelView: View {
                 
                 Section("LED Control") {
                     ColorPicker("Color picker", selection: $lamp.color, supportsOpacity: false)
-                
-                    HStack {
-                        Text("Brightness")
-                        
-                        Spacer()
-                        
-                        Slider(value: $brightness, in: 0...255)
-                        
-                        Spacer()
-                        
-                        HStack {
-                            Spacer()
-                            
-                            Text("\(Int(brightness))")
-                                .foregroundColor(.secondary)
-                        }
-                        .frame(width: 40)
-                    }
-                    .tint(.white)
                 }
                 
                 Section("Advanced") {

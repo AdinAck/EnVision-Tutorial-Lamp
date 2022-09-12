@@ -1,24 +1,5 @@
 # EnVision-Tutorial-Lamp
  
-# Overview
+A tutorial for building an RGB lamp controlled over BLE.
 
-```mermaid
-flowchart TD
-P --> C
-    subgraph Client
-    A(Central Manager) --> P(Peripheral)
-    end
-
-    subgraph Server
-    subgraph Services
-    C(Lamp) --> R
-    C --> G
-    C --> B
-    subgraph Characteristics
-    R
-    G
-    B
-    end
-    end
-    end
-```
+To get started with the tutorial, go to the [wiki](https://github.com/AdinAck/EnVision-Tutorial-Lamp/wiki).
