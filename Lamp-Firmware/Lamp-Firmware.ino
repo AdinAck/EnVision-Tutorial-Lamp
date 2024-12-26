@@ -28,12 +28,7 @@ void update_LEDs() {
 }
 
 class ServerCallbacks: public BLEServerCallbacks {
-    void onConnect(BLEServer* pServer) {
-      Serial.println("Client connected.");
-    }
-
     void onDisconnect(BLEServer* pServer) {
-      Serial.println("Client disconnected.");
       BLEDevice::startAdvertising();
     }
 };
@@ -57,12 +52,7 @@ class B_Charic_Callback: public BLECharacteristicCallbacks {
     }
 };
 
-void setup() {
-  Serial.begin(115200);
-  
-  ledcAttachPin(15, 0);
-  ledcSetup(0, 12000, 8);
-  ledcWrite(0, 255);
+void setup() {  
   pixels.begin();
 
   // i assume these are the pins for the neopixels
